@@ -1,0 +1,25 @@
+global:
+  domain: vucongtuanduong.dpdns.org
+  prefix: web-dev1
+
+image:
+  registry: docker.io
+  repository: vucongtuanduong/web-grading-system-api-gateway
+  tag: "v1.0.0"
+  pullPolicy: Always
+
+spring:
+  profilesActive: stg
+  dbName: api_gateway_db
+
+service:
+  type: ClusterIP
+  port: 8080
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
