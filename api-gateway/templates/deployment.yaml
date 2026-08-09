@@ -45,6 +45,10 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: DB_PASSWORD
+            - name: REGION
+              value: {{ .Values.observability.region | quote }}
+            - name: CLUSTER
+              value: {{ .Values.observability.cluster | quote }}
           {{- range $name, $uri := .Values.serviceUris }}
             - name: {{ $name | upper }}_SERVICE_URI
               value: {{ $uri | quote }}

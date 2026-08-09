@@ -45,6 +45,10 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: DB_PASSWORD
+            - name: REGION
+              value: {{ .Values.observability.region | quote }}
+            - name: CLUSTER
+              value: {{ .Values.observability.cluster | quote }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           readinessProbe:

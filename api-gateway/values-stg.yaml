@@ -12,6 +12,10 @@ spring:
   profilesActive: stg
   dbName: api_gateway_db
 
+observability:
+  region: dev
+  cluster: k3s-local
+
 serviceUris:
   assignment: http://grading-assignment-service:8081
   submission: http://grading-submission-service:8082

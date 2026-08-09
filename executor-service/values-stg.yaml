@@ -12,6 +12,10 @@ spring:
   profilesActive: stg
   dbName: executor_db
 
+observability:
+  region: dev
+  cluster: k3s-local
+
 service:
   type: ClusterIP
   port: 8083
