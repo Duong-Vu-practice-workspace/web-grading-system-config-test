@@ -20,6 +20,9 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           ports:
             - containerPort: {{ .Values.service.port }}
+          volumeMounts:
+            - name: config-repo
+              mountPath: /config-repo
           env:
             - name: SPRING_PROFILES_ACTIVE
               value: {{ .Values.spring.profilesActive }}
@@ -59,3 +62,6 @@ spec:
               port: {{ .Values.service.port }}
             initialDelaySeconds: 60
             periodSeconds: 30
+      volumes:
+        - name: config-repo
+          emptyDir: {}

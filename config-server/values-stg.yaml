@@ -9,7 +9,7 @@ image:
   pullPolicy: Always
 
 spring:
-  profilesActive: stg
+  profilesActive: "stg,native"
   dbName: config_db
 
 service:
