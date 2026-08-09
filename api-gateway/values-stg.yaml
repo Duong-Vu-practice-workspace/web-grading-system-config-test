@@ -12,6 +12,11 @@ spring:
   profilesActive: stg
   dbName: api_gateway_db
 
+serviceUris:
+  assignment: http://grading-assignment-service:8081
+  submission: http://grading-submission-service:8082
+  result: http://grading-result-service:8084
+
 service:
   type: ClusterIP
   port: 8080
